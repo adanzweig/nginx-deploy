@@ -1,0 +1,9 @@
+# ./ansible-nginx/deploy.yml
+---
+- hosts: localhost
+  sudo: yes 
+  tasks:
+    - block:
+        - include: 'tasks/install_nginx.yml'
+        - include: 'tasks/install_php.yml'
+        - include: 'tasks/cloneGithub.yml'

@@ -1,0 +1,9 @@
+- name: create /var/www/html directory
+  file: dest=/var/www/html state=directory owner=www-data group=www-data mode=0700
+- name: Clone git repository
+  git: >
+    dest=/var/www/html
+    repo=https://github.com/adanzweig/drupal.git
+    update=no
+  sudo: yes
+  sudo_user: www-data
